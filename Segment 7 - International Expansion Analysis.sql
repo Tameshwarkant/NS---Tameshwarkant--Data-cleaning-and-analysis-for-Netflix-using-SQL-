@@ -1,0 +1,332 @@
+-- Q1: -	Identify the countries where Netflix has expanded its content offerings.
+-- Ans:- Netflix has expanded its content offerings to multiple countries worldwide. Notable countries include
+-- United States
+-- France
+-- Germany
+-- India
+-- Canada
+-- Mexico
+-- Italy
+-- Australia
+-- Pakistan
+-- Not Given
+-- Philippines
+-- South Korea
+-- United Kingdom
+-- Czech Republic
+-- Japan
+-- Lebanon
+-- China
+-- Thailand
+-- Israel
+-- Nigeria
+-- Indonesia
+-- Spain
+-- Cameroon
+-- Netherlands
+-- Uruguay
+-- Egypt
+-- Ireland
+-- Turkey
+-- Russia
+-- South Africa
+-- Taiwan
+-- Brazil
+-- Belgium
+-- Kenya
+-- Colombia
+-- Argentina
+-- Chile
+-- Luxembourg
+-- Sweden
+-- Poland
+-- Bangladesh
+-- Portugal
+-- Hungary
+-- Norway
+-- Denmark
+-- Senegal
+-- Malaysia
+-- Saudi Arabia
+-- Singapore
+-- Kuwait
+-- Hong Kong
+-- Iceland
+-- Austria
+-- Serbia
+-- New Zealand
+-- Namibia
+-- Vietnam
+-- Peru
+-- Mozambique
+-- Belarus
+-- Switzerland
+-- Ghana
+-- United Arab Emirates
+-- Zimbabwe
+-- Romania
+-- Finland
+-- Puerto Rico
+-- Jordan
+-- Cyprus
+-- Mauritius
+-- Bulgaria
+-- Paraguay
+-- Croatia
+-- Cambodia
+-- Georgia
+-- Soviet Union
+-- Greece
+-- West Germany
+-- Iran
+-- Venezuela
+-- Syria
+-- Slovenia
+-- Guatemala
+-- Ukraine
+-- Jamaica
+-- Somalia.
+-- showcasing the platform's global reach and diverse content library.
+     SELECT DISTINCT country
+     FROM netflix_dataset;
+
+-- Q2: -	Analyse the distribution of content types in different countries.
+-- Ans:- The distribution of content types varies across different countries. Some countries have a higher proportion of movies, while others have a greater emphasis on TV shows. 
+-- country    type    count
+-- United States	Movie	2395
+-- France	TV Show	65
+-- Germany	Movie	79
+-- India	Movie	976
+-- Canada	Movie	187
+-- Mexico	Movie	90
+-- Italy	TV Show	19
+-- Australia	TV Show	53
+-- Pakistan	Movie	71
+-- Pakistan	TV Show	350
+-- Not Given	Movie	257
+-- Mexico	TV Show	48
+-- France	Movie	148
+-- Not Given	TV Show	30
+-- Philippines	Movie	80
+-- South Korea	TV Show	165
+-- United Kingdom	Movie	387
+-- Czech Republic	Movie	5
+-- Japan	TV Show	172
+-- Japan	Movie	87
+-- United States	TV Show	845
+-- Lebanon	TV Show	6
+-- China	TV Show	41
+-- Canada	TV Show	84
+-- China	Movie	59
+-- Thailand	TV Show	24
+-- Israel	TV Show	10
+-- South Korea	Movie	49
+-- Nigeria	Movie	96
+-- Indonesia	Movie	84
+-- India	TV Show	81
+-- Spain	TV Show	53
+-- Cameroon	Movie	1
+-- Netherlands	Movie	23
+-- Lebanon	Movie	18
+-- Uruguay	TV Show	1
+-- United Kingdom	TV Show	251
+-- Egypt	Movie	109
+-- Ireland	Movie	22
+-- Turkey	Movie	82
+-- Spain	Movie	129
+-- Italy	Movie	47
+-- Russia	Movie	5
+-- South Africa	Movie	35
+-- Taiwan	Movie	15
+-- Brazil	Movie	60
+-- Belgium	TV Show	9
+-- Egypt	TV Show	14
+-- Kenya	Movie	4
+-- Germany	TV Show	25
+-- Colombia	Movie	17
+-- Belgium	Movie	9
+-- Argentina	Movie	56
+-- Chile	Movie	18
+-- Uruguay	Movie	8
+-- Luxembourg	TV Show	1
+-- Sweden	Movie	11
+-- Poland	Movie	22
+-- Bangladesh	Movie	3
+-- Brazil	TV Show	28
+-- Colombia	TV Show	25
+-- Philippines	TV Show	3
+-- Portugal	Movie	4
+-- Turkey	TV Show	30
+-- Australia	Movie	61
+-- Hungary	Movie	5
+-- Norway	Movie	12
+-- Denmark	TV Show	11
+-- Senegal	TV Show	1
+-- South Africa	TV Show	7
+-- Norway	TV Show	9
+-- Malaysia	Movie	16
+-- Netherlands	TV Show	5
+-- Russia	TV Show	14
+-- Saudi Arabia	TV Show	5
+-- Singapore	Movie	10
+-- Kuwait	TV Show	2
+-- Taiwan	TV Show	71
+-- Hong Kong	Movie	76
+-- Iceland	Movie	3
+-- Indonesia	TV Show	2
+-- Nigeria	TV Show	9
+-- Austria	Movie	8
+-- Argentina	TV Show	20
+-- Sweden	TV Show	8
+-- Serbia	Movie	3
+-- New Zealand	Movie	15
+-- Saudi Arabia	Movie	7
+-- Namibia	Movie	1
+-- Poland	TV Show	8
+-- Thailand	Movie	42
+-- Vietnam	Movie	7
+-- Ireland	TV Show	6
+-- Peru	Movie	6
+-- Mozambique	Movie	1
+-- Belarus	TV Show	1
+-- Switzerland	Movie	7
+-- Ghana	Movie	4
+-- Chile	TV Show	4
+-- United Arab Emirates	Movie	20
+-- Zimbabwe	Movie	1
+-- Romania	Movie	10
+-- Kuwait	Movie	5
+-- Finland	TV Show	3
+-- Puerto Rico	TV Show	1
+-- Jordan	TV Show	2
+-- Austria	TV Show	1
+-- Iceland	TV Show	3
+-- Cyprus	TV Show	1
+-- Israel	Movie	12
+-- Mauritius	TV Show	1
+-- Singapore	TV Show	18
+-- Finland	Movie	3
+-- Bulgaria	Movie	5
+-- Denmark	Movie	19
+-- Malaysia	TV Show	7
+-- Hong Kong	TV Show	3
+-- New Zealand	TV Show	2
+-- Paraguay	Movie	1
+-- Croatia	TV Show	1
+-- Czech Republic	TV Show	1
+-- Cambodia	Movie	2
+-- Georgia	Movie	2
+-- Soviet Union	Movie	1
+-- Greece	Movie	1
+-- West Germany	Movie	1
+-- Iran	Movie	1
+-- Venezuela	Movie	2
+-- Syria	Movie	2
+-- Slovenia	Movie	1
+-- Guatemala	Movie	1
+-- Ukraine	TV Show	2
+-- Jamaica	Movie	1
+-- Switzerland	TV Show	1
+-- United Arab Emirates	TV Show	1
+-- Somalia	Movie	1
+-- Croatia	Movie	1
+-- Mauritius	Movie	1
+      SELECT country, type, COUNT(*) AS count
+      FROM netflix_dataset
+      GROUP BY country, type;
+
+-- Q3: -	Investigate the relationship between content duration and country of production.
+-- Ans:- Content duration is influenced by the country of production. Certain countries tend to produce content with longer durations, reflecting their storytelling or production preferences.
+-- country   avg_duration
+-- West Germany	150
+-- Soviet Union	147
+-- Cameroon	143
+-- Iran	123
+-- Romania	121.7
+-- Somalia	118
+-- India	115.57142857142857
+-- Cambodia	114.5
+-- Jamaica	112
+-- Bangladesh	111.66666666666667
+-- Philippines	107.3855421686747
+-- Paraguay	107
+-- Indonesia	106.34883720930233
+-- Vietnam	106.28571428571429
+-- Greece	106
+-- Ghana	105.5
+-- Mozambique	102
+-- Hungary	101.2
+-- Venezuela	100.5
+-- Zimbabwe	100
+-- Portugal	98.5
+-- Nigeria	96.71428571428571
+-- Hong Kong	95.56962025316456
+-- Egypt	95.33333333333333
+-- Peru	95
+-- Bulgaria	94.4
+-- New Zealand	94.17647058823529
+-- Serbia	90.66666666666667
+-- Kenya	90.5
+-- United Arab Emirates	88.57142857142857
+-- Austria	88.11111111111111
+-- Czech Republic	86.33333333333333
+-- Slovenia	84
+-- Not Given	82.95470383275261
+-- Switzerland	82.625
+-- South Africa	80.19047619047619
+-- Croatia	79.5
+-- Turkey	79.09821428571429
+-- Kuwait	78
+-- Chile	76.27272727272727
+-- Netherlands	75.92857142857143
+-- Ireland	75.28571428571429
+-- Germany	74.36538461538461
+-- Uruguay	74.22222222222223
+-- Spain	72.66483516483517
+-- Italy	72.13636363636364
+-- Georgia	71.5
+-- Poland	71.43333333333334
+-- Malaysia	69.56521739130434
+-- Guatemala	69
+-- United States	68.44413580246913
+-- Thailand	68.16666666666667
+-- France	67.71830985915493
+-- Argentina	66.38157894736842
+-- Lebanon	65.45833333333333
+-- China	64.56
+-- Denmark	62.53333333333333
+-- Brazil	62.15909090909091
+-- Norway	61.714285714285715
+-- Canada	61.29520295202952
+-- Mexico	58.63768115942029
+-- United Kingdom	58.18808777429467
+-- Saudi Arabia	58.083333333333336
+-- Israel	55.54545454545455
+-- Sweden	51.8421052631579
+-- Syria	51.5
+-- Australia	50.90350877192982
+-- Finland	50.666666666666664
+-- Belgium	50.388888888888886
+-- Mauritius	45.5
+-- Iceland	44.166666666666664
+-- Japan	33.833976833976834
+-- Colombia	33.42857142857143
+-- Singapore	32.32142857142857
+-- Namibia	29
+-- Russia	28.105263157894736
+-- South Korea	27.070093457943926
+-- Taiwan	19.88372093023256
+-- Pakistan	13.969121140142517
+-- Belarus	2
+-- Ukraine	2
+-- Cyprus	1
+-- Puerto Rico	1
+-- Luxembourg	1
+-- Senegal	1
+-- Jordan	1
+      SELECT country, AVG(duration) AS avg_duration
+      FROM netflix_dataset
+      GROUP BY country
+      ORDER BY avg_duration DESC;
+
+
